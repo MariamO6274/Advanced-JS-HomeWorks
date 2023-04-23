@@ -34,7 +34,6 @@ console.log(removeDupli(array));
 
 // 1. Write a JavaScript function that accepts a string as a parameter and finds the longest word within the string.
 
-
 function myString(str) {
   var words = str.split(" ");
   var longest = " ";
@@ -46,7 +45,6 @@ function myString(str) {
   return longest;
 }
 console.log(myString("My name is Mariamooo"));
-
 
 // function findLongestWord(str) {
 //   var strSplit = str.split(" ");
@@ -67,3 +65,15 @@ console.log(myString("My name is Mariamooo"));
 //   myUniqueElemSet.add(elem);
 // });
 // console.log("myUnique Elements Set: ", myUniqueElemSet);
+
+// 2. Write a JavaScript function that accepts a number as a parameter and checks whether it is prime or not.
+
+const prime = (n) => {
+  for (let i = 2; i <= n / 2; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+console.log(prime(7)); //check 
