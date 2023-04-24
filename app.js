@@ -30,6 +30,21 @@ console.log(prime(7)); //check
 
 //------------------------------------------------------------------------------------
 
+// 3. Write a JavaScript function that takes an array of numbers and finds the second lowest and second greatest numbers, respectively
+
+function secLowestGreatest(arr) {
+  arr.sort();
+
+  var num = arr.length;
+  var lowest = arr[1];
+  var greatest = arr[num - 2];
+
+  console.log(`Second lowest is ${lowest} and second greatest is ${greatest}`);
+}
+secLowestGreatest([1, 2, 3, 4, 5, 6]);
+
+//------------------------------------------------------------------------------------
+
 // 4. Write a JavaScript function to extract unique characters from a string.
 
 function extractUnique(str) {
@@ -46,3 +61,20 @@ console.log(extractUnique("aabbccddkk"));
 
 //------------------------------------------------------------------------------------
 
+// 5. Write a JavaScript function to find the first not repeated character.
+
+
+var firstNotRepeated = function (string) {
+  var chars = string.split("");
+  for (var i = 0; i < string.length; i++) {
+    if (
+      chars.filter(function (j) {
+        return j == string.charAt(i);
+      }).length == 1
+    )
+      return string.charAt(i);
+  }
+};
+console.log(firstNotRepeated("abafcddbec"));
+
+//------------------------------------------------------------------------------------
