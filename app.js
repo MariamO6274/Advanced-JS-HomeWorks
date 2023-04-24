@@ -63,7 +63,6 @@ console.log(extractUnique("aabbccddkk"));
 
 // 5. Write a JavaScript function to find the first not repeated character.
 
-
 var firstNotRepeated = function (string) {
   var chars = string.split("");
   for (var i = 0; i < string.length; i++) {
@@ -78,3 +77,22 @@ var firstNotRepeated = function (string) {
 console.log(firstNotRepeated("abafcddbec"));
 
 //------------------------------------------------------------------------------------
+
+// 6. Write a JavaScript program to pass a 'JavaScript function' as a parameter.
+
+// function welcome() {
+//   return "Welcome to out class";
+// }
+
+//------------------------------------------------------------------------------------
+
+// 7. Write a JavaScript function to get the function name.
+function functionName() {
+  return functionName.caller.name;
+}
+
+function printFuncName() { 
+  console.log(functionName());
+}
+
+printFuncName(); 
