@@ -28,3 +28,10 @@ function removeDupli(array) {
 }
 
 console.log(removeDupli(array));
+
+// var e_arr = [2, 4, 5, 6, 2, 9, 4, 2, 7];
+// var myUniqueElemSet = new Set();
+// e_arr.forEach((elem) => {
+//   myUniqueElemSet.add(elem);
+// });
+// console.log("myUnique Elements Set: ", myUniqueElemSet);
