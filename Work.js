@@ -37,3 +37,51 @@ function outerFun() {
 }
 outerFun("welcon", "to", "Scaler");
 
+//===================================================================
+
+// function greet () {
+//     var fun = function () {
+//         console.log("iner")
+//     }
+//     return fun;
+// }
+// var e1 = greet();
+// e1();
+//===================================================================
+
+function greet(name1) {
+  return (function () {
+    console.log(name1);
+    console.log("iner");
+  }
+  )
+  //return func
+}
+var e1 = greet("TOM");
+e1();
+//===================================================================
+
+function greet(name1) {
+    var count = 10;
+
+  return (function () {
+    console.log(name1);
+    console.log(count);
+    console.log("iner");
+  }
+  )
+  //return func
+}
+var e1 = greet("TOM");
+e1();
+//===================================================================
+
+function init() {
+  var name = "Mozilla"; // name is a local variable created by init
+  function displayName() {
+    // displayName() is the inner function, that forms the closure
+    console.log(name); // use variable declared in the parent function
+  }
+  displayName();
+}
+init();

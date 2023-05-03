@@ -105,34 +105,39 @@ runBtn.addEventListener("click", () => {
 // A common example of closures is to define a variable outside a function
 // that can then be used and changed inside the inner function.
 
+function init() {
+  var name = "Mozilla"; // name is a local variable created by init
+  
+  function displayName() {
+    // displayName() is the inner function, that forms the closure
+    console.log(name); // use variable declared in the parent function
+  }
+  return displayName;
+}
+
+var result = init()
+result();
+
 
 //===================================
 
 
-function outer1() {
-  var num = 10;
 
-  function inner1() {
-    var num2 = 20;
-    return num2;
-  }
-  var j = inner1();
-  return j; // 20
-}
+const NavbarTheme = () => {
+  let dark_theme = false;
 
-var i = outer1();
+  const buttonClick = () => {
+    dark_theme = !dark_theme; // flip false to true, and true to false
+  };
+};
+console.log();
+NavbarTheme();
 
-//console.log(i); 
+//===================================
 
-function outer() {
-  var num = 10;
+console.log("code before")
 
-  function inner() {
-    var num2 = 20;
-    return num2;
-  }
-  return inner;
-}
-
-var i = outer();
-console.log(i);
+setTimeout(() => {
+  console.log("thisis from settimout")
+}, 3000 );
+console.log("Code after")
