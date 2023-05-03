@@ -1,0 +1,12 @@
+What is hoisting? Write an example.
+
+Event loop and task queue.
+
+Synchronous and Asynchronous JS with simple example
+
+Web Apis: See the list of all Web Apis
+setTimeout
+setInterval
+localStorage
+sessionStorage
+cookies
