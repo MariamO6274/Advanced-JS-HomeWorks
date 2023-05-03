@@ -1,0 +1,31 @@
+Date : 22 April 2023
+1. Write a JavaScript function that accepts a string as a parameter and finds the longest word within the string.
+2. Write a JavaScript function that accepts a number as a parameter and checks whether it is prime or not.
+3. Write a JavaScript function that takes an array of numbers and finds the second lowest and second greatest numbers, respectively
+4. Write a JavaScript function to extract unique characters from a string.
+5. Write a JavaScript function to find the first not repeated character.
+6. Write a JavaScript program to pass a 'JavaScript function' as a parameter.
+7. Write a JavaScript function to get the function name.
+
+
+
+
+
+// Everyday practice to get better at PROGRAMMING
+1. Understand the code flow. In what sequence the code will be executed.
+2. start from step 1 and predict/write down the output
+
+// Statements
+1. Write a function which returns another function
+2. Create a JS object which has variables and functions
+    a. There should be at least 1 arrow function and 1 normal function
+    b. (Intermediate) The normal function should contain at least 1 arrow function and 1 normal function inside it
+3. Write a function 'add' which takes 2 arguments and returns the sum of the 2 numbers.
+4. Write a function 'calculate' that takes an input a operation (+,-,*,/), which returns another function as per operation argument.
+
+
+
+// Task queue and cloasures example
+
+// Understand Array destructuring in 1 level JSON and nested JSON objects
+// 
