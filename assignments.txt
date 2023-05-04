@@ -24,8 +24,29 @@ Date : 22 April 2023
 4. Write a function 'calculate' that takes an input a operation (+,-,*,/), which returns another function as per operation argument.
 
 
-
+Date : 2 May 2023
 // Task queue and cloasures example
 
 // Understand Array destructuring in 1 level JSON and nested JSON objects
-// 
+
+
+
+
+Date : 4 May 2023
+// call APply bind Practice steps
+// 1. create some person obj with firstname, lastname and printDetails function
+//          Remember to use 'this' in your function
+// 2. Create another person obj, and try to borrow the function from person1
+// 3. Use call and apply methods on person obj
+// 4. Introduce at least 2 arguments to your printDetails function.
+// 5. Pass these arguments through call, apply methods
+// 6. Now use bind to create copies of function (with some context)
+
+
+
+// 30 mins everyday: ONLY CODING....Do not read....DO not use google help...
+// create a new file everyday for this 30 mins coding practice
+// and upload it to your github Everyday
+// Name the file as date, example: 4May2023.js
+
+// This will help with doubts, understanding and coding speed
