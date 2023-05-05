@@ -60,6 +60,7 @@ let printPerson1Function2 = printfullName.bind(person1, "Pune");
 //======================================================
 // How copies help us to create new meaningful functions
 //======================================================
+//Function Curring
 
 let multiply = function () {
   console.log(this.x * this.y);
@@ -96,3 +97,56 @@ add2(5);
 // so here we can freeze the arguments with bind. multiply.bind(this, 3);
 // It will freeze the context as 'window' and first arguments will be frozen as 3
 // So now it will accept only second argument add2(5);
+
+//=============================================
+console.log(
+  "<---------------------------Home Work--------------------------->"
+);
+
+// Date : 4 May 2023
+// call APply bind Practice steps
+// 1. create some person obj with firstname, lastname and printDetails function
+//          Remember to use 'this' in your function
+// 2. Create another person obj, and try to borrow the function from person1
+// 3. Use call and apply methods on person obj
+// 4. Introduce at least 2 arguments to your printDetails function.
+// 5. Pass these arguments through call, apply methods
+// 6. Now use bind to create copies of function (with some context)
+
+var printDetails = function (city, country) {
+  console.log(
+    `${this.firstname} ${this.lastName} lives in ${city}, ${country}`
+  );
+};
+
+var person = {
+  firstname: "Mari",
+  lastName: "Ostatishvili",
+};
+
+var anotherPerson = {
+  firstname: "Mariam",
+  lastName: "Ostatishvili",
+};
+
+// printDetails.call(anotherPerson, "Colorado", "USA");
+printDetails.apply(anotherPerson, ["Colorado", "USA"]);
+
+console.log("practice");
+
+// var person = {
+//     firstName: "Mariam",
+//     lastName: "Ost",
+//     getFullName: function (){
+//         var fullName = `${this.firstName} ${this.lastName}`
+//         return fullName;
+//     }
+
+// }
+
+// var logName = function(lang1, lang2) {
+//     console.log("Logged: "+ this.getFullName());
+// }
+
+// var logPersonName = logName.bind(person);
+// logPersonName();

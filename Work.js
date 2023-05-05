@@ -1,87 +1,83 @@
-function outer1() {
-  var num = 10;
+console.log("practice");
 
-  function inner1() {
-    var num2 = 20;
-    return num2;
-  }
-  var j = inner1();
-  return j; // 20
-}
-
-var i = outer1();
-
-console.log(i);
-
-// function outer() {
-//   var num = 10;
-
-//   function inner() {
-//     var num2 = 20;
-//     return num2;
-//   }
-//   return inner;
-// }
-
-// var i = outer();
-// console.log(i);
-
-//===================================================================
-
-function outerFun() {
-  console.log(arguments);
-  let innerFun = () => {
-    console.log(arguments);
-  };
-  innerFun("Hello", "Coder");
-}
-outerFun("welcon", "to", "Scaler");
-
-//===================================================================
-
-// function greet () {
-//     var fun = function () {
-//         console.log("iner")
+// var person = {
+//     firstName: "Mariam",
+//     lastName: "Ost",
+//     getFullName: function (){
+//         var fullName = `${this.firstName} ${this.lastName}`
+//         return fullName;
 //     }
-//     return fun;
+
 // }
-// var e1 = greet();
-// e1();
-//===================================================================
 
-function greet(name1) {
-  return (function () {
-    console.log(name1);
-    console.log("iner");
-  }
-  )
-  //return func
-}
-var e1 = greet("TOM");
-e1();
-//===================================================================
+// var logName = function(lang1, lang2) {
+//     console.log("Logged: "+ this.getFullName());
+// }
 
-function greet(name1) {
-    var count = 10;
+// var logPersonName = logName.bind(person);
+// logPersonName();
 
-  return (function () {
-    console.log(name1);
-    console.log(count);
-    console.log("iner");
-  }
-  )
-  //return func
-}
-var e1 = greet("TOM");
-e1();
-//===================================================================
+//=========================================================================
 
-function init() {
-  var name = "Mozilla"; // name is a local variable created by init
-  function displayName() {
-    // displayName() is the inner function, that forms the closure
-    console.log(name); // use variable declared in the parent function
-  }
-  displayName();
-}
-init();
+// const pers = {
+//   firstName: "Mariamo",
+//   lastName: "OStatish",
+//   fullName: function () {
+//     return this.firstName + " " + this.lastName;
+//   },
+// };
+
+// const children = {
+//   firstName: "Lazare",
+//   lastName: "Nikolas",
+// };
+
+// let fullName = pers.fullName.bind(children);
+// console.log(fullName);
+
+console.log(
+  "<---------------------------Home Work--------------------------->"
+);
+
+// Date : 4 May 2023
+// call APply bind Practice steps
+// 1. create some person obj with firstname, lastname and printDetails function
+//          Remember to use 'this' in your function
+// 2. Create another person obj, and try to borrow the function from person1
+// 3. Use call and apply methods on person obj
+// 4. Introduce at least 2 arguments to your printDetails function.
+// 5. Pass these arguments through call, apply methods
+// 6. Now use bind to create copies of function (with some context)
+
+var printDetails = function (city, country) {
+  console.log(
+    `${this.firstname} ${this.lastName} lives in ${city}, ${country}`
+  );
+};
+
+var person = {
+  firstname: "Mari",
+  lastName: "Ost",
+};
+
+var anotherPerson = {
+  firstname: "Mariam",
+  lastName: "Ostatishvili",
+};
+
+var person2 = {
+  firstname: "Nino",
+  lastName: "Ostatishvili",
+};
+
+printDetails.call(anotherPerson, "Tbilisi", "Georgia");
+// printDetails.call(person2, "Tbilisi", "Georgia"); //prints same
+ printDetails.apply(anotherPerson, ["Colorado", "USA"]);
+
+// we can make var array and pass var name to the apply
+
+let useBind = printDetails.bind(person2);
+useBind("Brooklyn", "NY");
+
+let useBind2 = printDetails.bind(anotherPerson, "London");
+// useBind2(); // how to call it when it's empty ???
