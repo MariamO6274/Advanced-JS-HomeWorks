@@ -42,7 +42,14 @@ Date : 4 May 2023
 // 5. Pass these arguments through call, apply methods
 // 6. Now use bind to create copies of function (with some context)
 
-
+// Protptype
+// 1. Check the prototype chain of each Array, function and object types
+// 2. Create an object and try to point its prototype to a different obj
+// 3. Check how the property is picked up from prototype chain (you should have a missing prop in orig object,
+but it should be present in your prototype chain)
+// 4. Use prototype effeciently. example of multiple objects with same function.
+// 5. Declare the function on prototype, and remove it from individual objects. And then call the function
+// Try some online examples also
 
 // 30 mins everyday: ONLY CODING....Do not read....DO not use google help...
 // create a new file everyday for this 30 mins coding practice

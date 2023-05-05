@@ -83,3 +83,7 @@ useBind("Brooklyn", "NY");
 var useBind2 = printDetails.bind(anotherPerson, "London", "England");
 useBind2();
 
+//=========================================================================
+
+//prototype
+
