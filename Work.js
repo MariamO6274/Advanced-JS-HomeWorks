@@ -71,13 +71,15 @@ var person2 = {
 };
 
 printDetails.call(anotherPerson, "Tbilisi", "Georgia");
-// printDetails.call(person2, "Tbilisi", "Georgia"); //prints same
- printDetails.apply(anotherPerson, ["Colorado", "USA"]);
+printDetails.call(person2, "Tbilisi", "Georgia");
+printDetails.apply(anotherPerson, ["Colorado", "USA"]);
+printDetails.apply(person, ["Gori", "Georgia"]);
 
 // we can make var array and pass var name to the apply
 
-let useBind = printDetails.bind(person2);
+var useBind = printDetails.bind(person2);
 useBind("Brooklyn", "NY");
 
-let useBind2 = printDetails.bind(anotherPerson, "London");
-// useBind2(); // how to call it when it's empty ???
+var useBind2 = printDetails.bind(anotherPerson, "London", "England");
+useBind2();
+
