@@ -150,3 +150,9 @@ console.log("practice");
 
 // var logPersonName = logName.bind(person);
 // logPersonName();
+
+
+//if you add mymap to diff file it will still work in proto
+var arr3 = [];
+
+arr3.mymap();
