@@ -98,14 +98,13 @@ useBind2();
 
 //===================
 //check array
-var numStudents = ["Mariami", "Giorgi", "Beka", "Lika", "Levani", "Rezi"]
+var numStudents = ["Mariami", "Giorgi", "Beka", "Lika", "Levani", "Rezi"];
 console.log("numStudents");
 
 Array.prototype.arrayDetails = () => {
   console.log("Check for array");
 };
 //===================
-
 
 var student1 = {
   firstName: "Giorgi",
@@ -144,10 +143,57 @@ console.log(student2);
 console.log(student3);
 console.log(student4);
 
-//when you don't want to usegeneric function
-// prototyle base object
-Object.prototype.details = () => {
-  console.log("studies in despani technology since ", this.month);
-};
+// Object.prototype.details = () => {
+//   console.log("studies in despani technology since ", this.month);
+// };
 
 //when we are calling student1.details()  in dev tool it gives me undefind,bc of this is not pointing to a student1? how to??
+
+function Details(month) {
+  console.log("I am a new function");
+  this.month = month;
+}
+Details.prototype.printDetails = function () {
+  console.log("print it " + this.month);
+};
+
+let students = new Details("June");
+students.printDetails();
+
+
+//=============================================== GO OVER 
+function Rectangle(width, height) {
+  this.width = width;
+  this.height = height;
+}
+
+// this is an instance method (that you can call on new instances of Rectangle)
+Rectangle.prototype.isSquare = function () {
+  return this.width === this.height;
+};
+
+
+//=============================================== new And Constructor
+
+function Person6(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+
+}
+
+Person6.prototype.getFullName = function () {
+  return `${this.firstName} ${this.lastName}`;
+};
+
+
+Person6.prototype.voting = function () {
+  return this.age >= 18;
+};
+
+const student = new Person6("Mariam", "Ostatish", 34);
+console.log(student.getFullName()); // "Sam Blue"
+console.log(student.voting()); // true
+
+//=============================================== 
+

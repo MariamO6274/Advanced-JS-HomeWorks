@@ -18,15 +18,15 @@ console.log(value1);
 function Car(make, color) {
   // These 2 lines are useful when just invoking he function normally with/without new
   console.log("Car function called..!");
-  console.log("Make: " + make + " Color: " + color);
+  console.log("Make: " + make + " Color: " + color); /// calling
 
   // These 4 lines are useful when used with new keyword
-  console.log(this);
+  console.log(this); /// empty obj
   this.make = make;
   this.color = color;
-  console.log(this);
+  console.log(this); /// with proprtyies
 }
-
+///methods 
 Car.prototype.printDetails = function () {
   console.log("Print Details called: " + this.make + " " + this.color);
   // console.log(this);
@@ -36,4 +36,4 @@ Car("Toyota", "Black");
 
 let myCar1 = new Car("Honda", "Blue");
 myCar1.printDetails();
-//console.log(myCar1);
+//console.log(myCar1); ///returning
