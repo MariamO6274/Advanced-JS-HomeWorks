@@ -167,13 +167,23 @@ function Rectangle(width, height) {
   this.height = height;
 }
 
-// this is an instance method (that you can call on new instances of Rectangle)
 Rectangle.prototype.isSquare = function () {
   return this.width === this.height;
 };
+//==================
 
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function () {
+    console.log("draw");
+  };
+}
+var circle = new Circle(1);
+console.log(circle);
 
 //=============================================== new And Constructor
+
+
 
 function Person6(firstName, lastName, age) {
     this.firstName = firstName;
@@ -195,5 +205,40 @@ const student = new Person6("Mariam", "Ostatish", 34);
 console.log(student.getFullName()); // "Sam Blue"
 console.log(student.voting()); // true
 
+
+
+
+//=============================================== Call backs
+
+var a = (callback) => {
+  setTimeout(() => {
+    console.log(`I am 1 st function`);
+    callback();
+  }, 2000);
+};
+
+var b = () => {
+  console.log(`I am 2nd function`);
+};
+
+a(b);
+
 //=============================================== 
+
+var welcomePerson = (name, callback) => {
+  setTimeout(() => {
+    console.log(`Welcome ${name}`);
+    callback(); 
+  }, 1000);
+};
+
+//======================
+
+console.log("1");
+setTimeout(() => {
+  console.log("2");
+},0);
+console.log("3"); //1 3 2
+
+//======================
 
