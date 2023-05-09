@@ -168,7 +168,10 @@ function Rectangle(width, height) {
 }
 
 Rectangle.prototype.isSquare = function () {
-  return this.width === this.height;
+  let isItSquare = false;
+  if (this.width === this.height)
+    isItSquare = true;
+  return isItSquare;
 };
 //==================
 
