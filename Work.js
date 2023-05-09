@@ -202,7 +202,7 @@ Person6.prototype.voting = function () {
 };
 
 const student = new Person6("Mariam", "Ostatish", 34);
-console.log(student.getFullName()); // "Sam Blue"
+console.log(student.getFullName()); // "Mariam Ostatish"
 console.log(student.voting()); // true
 
 
