@@ -31,23 +31,32 @@ function executor(resolve, reject) {
 
 let p1 = new Promise(executor);
 
-p1.then(function (youtubeAPIResponse) {
-  console.log("Then called.....");
+p1.then(function(youtubeAPIResponse) {
+    console.log("First Then called.....");
 
-  // Process the response
-  // take the details for youtube API and display the video list
+    // Process the response
+    // take the details for youtube API and display the video list
 
-  return new Promise(function (resolve, reject) {
-    //resolve();
-    reject();
-  });
-}).then(function () {
-  console.log(" Second then called......");
-});
+    return new Promise(function (resolve, reject) {
+        resolve("newResponse");
+        //reject();
+    })
 
-p1.catch(function (errMsg) {
-  console.log(errMsg);
-});
+}).then(function(res) {
+    console.log(" Second then called......")
+    //fetch1();
+}).then(function() {
+    console.log(" Third then called......");
+
+}).then(function() {
+    console.log(" Fourth then called......")
+}).then(function() {
+    console.log(" Fifth then called......")
+})
+
+p1.catch(function(errMsg){
+    console.log(errMsg);
+})
 
 
 //=================
@@ -68,4 +77,52 @@ p1.catch(function (errMsg) {
 
 // How do you pass the APIresponse from Promise to the 'catch' callback function
 // You can directly pass it as an argument to reject function
+
+//=================
+
+function fetch1() {
+  return new Promise(function (resolve, reject) {
+    //resolve();
+    // call some another webservice
+
+    // resolve ("Pass data of new webservice")
+    reject();
+  });
+}
+
+
+
+//=========================== Promises Practis
+
+function hold(resolve, reject) {
+  console.log("This is a main function to be called..");
+
+  setTimeout(() => {
+    resolve();
+  }, 3000);
+}
+
+let promise = new Promise(hold);
+
+promise.then(function (anything) {
+  console.log("If it resolves call..");
+
+  return new Promise(function (resolve, reject) {
+    reject();
+  });
+});
+
+promise.catch(function (error) {
+  console.log(error);
+});
+//============
+const wait = (milliseconds) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, milliseconds);
+  });
+};
+
+console.log(wait(1000));
 
