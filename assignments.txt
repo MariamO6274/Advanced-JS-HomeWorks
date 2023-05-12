@@ -63,3 +63,8 @@ but it should be present in your prototype chain)
 Revise map, filter reduce
 Revise html css basics
 Understand Promises. Practice, practice, practice. And come up with doubts.
+
+// 11 may
+
+https://github.com/MariamO6274/Advanced-JS-HomeWorks
+go over and mark

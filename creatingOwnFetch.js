@@ -58,3 +58,10 @@ myFetchText("https://dummyjson.com/products").then((text) => {
 // API creator uses return new Promise
 
 // API user/consumer calls that API and uses 'then'
+const add = x => x + x;
+
+function myFunc (num = 2, value = add(num)){
+    console.log(num, value)
+}
+myFunc();
+myFunc(3);

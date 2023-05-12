@@ -109,3 +109,22 @@ function init() {
   displayName();
 }
 init();
+
+e1();
+//===================================================================
+//Check this for tomorrow in miro
+let obj = {
+  greetMes: "welcome",
+  funOne() {
+    console.log(this);
+  },
+  funTwo: () => {
+    console.log(this);
+  },
+};
+obj.funOne();
+let fun = obj.funOne;
+fun();
+obj.funTwo();
+let a = obj.funTwo;
+a();
