@@ -43,15 +43,15 @@ p1.then(function(youtubeAPIResponse) {
     })
 
 }).then(function(res) {
-    console.log(" Second then called......")
+    console.log(" Second then called......") ///logical seperation of your code
     //fetch1();
 }).then(function() {
-    console.log(" Third then called......");
+    console.log(" Third then called......"); /// every next then is defending on previouse then's ecexution
 
 }).then(function() {
-    console.log(" Fourth then called......")
+    console.log(" Fourth then called......") /// every then follows only one then (fourth followes third)
 }).then(function() {
-    console.log(" Fifth then called......")
+    console.log(" Fifth then called......") /// fifth followes fourth, you controlling thens based on promes results
 })
 
 p1.catch(function(errMsg){
