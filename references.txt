@@ -1,0 +1,3 @@
+For dummy json and fake webservice API
+https://dummyjson.com/
+This website has info of some GET,POST, etc. APIs which we can use for testing purpose

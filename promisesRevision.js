@@ -175,3 +175,52 @@ fetch("https://reqres.in/api/user")
   })
   .then((data) => console.log(data))
   .catch((error) => console.log("Error"));
+//====================
+
+
+// For POST type, You need to use same fetch API.
+// What changes?
+// It takes an extra argument
+// This arguent is an object which has 3 main properties
+var options = {
+    method: 'POST',
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: {
+
+    }
+}
+//
+
+
+
+
+
+// console.log(document.querySelectorAll('.inp'));
+// console.log(document.getElementById('currRateEUR'));
+
+// Consumer code
+//myFetchJson().then((json) => console.log(json));
+
+
+// Creators code
+(function() {
+    console.log(this); // window
+    this.myFetchJson = function(url) {
+        return new Promise ( function(resolve, reject) {
+            // Write my own logic here
+
+            fetch("https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json/")
+            .then((response) =>  response.json() )
+            .then((json) => {resolve(json)})
+            // If my logic is good, I should call resolve 
+
+
+            // Else if my logic is not good, I can call reject
+        })
+    }
+    console.log("myFetch function");
+})();
+
+

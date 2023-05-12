@@ -57,3 +57,9 @@ but it should be present in your prototype chain)
 // Name the file as date, example: 4May2023.js
 
 // This will help with doubts, understanding and coding speed
+
+
+// 10 may
+Revise map, filter reduce
+Revise html css basics
+Understand Promises. Practice, practice, practice. And come up with doubts.
