@@ -368,3 +368,35 @@
 // console.log(multiplyNumbers([10, 20, 30])); 
 // console.log(multiplyNumbers([2, 4, 2, 10]));
 
+//================================================================
+var pets = ["dog", "chicken", "cat", "dog", "chicken", "chicken", "rebbit"];
+
+var petCounts = pets.reduce(function (obj, pet) {
+  if (!obj[pet]) {
+    obj[pet] = 1;
+  } else {
+    obj[pet]++;
+  }
+  return obj;
+}, {});
+
+console.log(petCounts);
+
+
+
+let obj = {
+  greetingMessage: "Welcome to Scaler Academy",
+  funOne() {
+    console.log(this);
+  },
+  funTwo: () => {
+    console.log(this);
+  },
+};
+
+obj.funOne();
+let fun = obj.funOne;
+fun();
+obj.funTwo();
+let a = obj.funTwo;
+a();

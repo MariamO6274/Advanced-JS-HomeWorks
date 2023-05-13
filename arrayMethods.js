@@ -72,7 +72,7 @@ console.log(getPositiveTemperatures([1, -3, -2, 4, 10]));
 console.log("---------------------");
 
 //================================================================
-reduce
+//reduce
 var grades = [10, 15, 5];
 var sum = grades.reduce((total, current) => {
   return total + current;
@@ -113,3 +113,13 @@ const multiplyNumbers = (numbers) => {
 console.log(multiplyNumbers([10, 20, 30])); 
 console.log(multiplyNumbers([2, 4, 2, 10]));
 
+//================================================================
+
+//join(glue)
+//The array .join(glue) method returns a string of the array elements separated by the glue.
+var groceries = ["Apple", "Peach", "Tomato"];
+groceries.toString(); // "Apple,Peach,Tomato"
+
+var groceries = ["Apple", "Peach", "Tomato"];
+groceries.join("; "); // "Apple; Peach; Tomato"
+groceries.join(" . "); // "Apple . Peach . Tomato"
