@@ -43,9 +43,9 @@ let obj = {
   },
 };
 
-obj.funOne();
+obj.funOne(); //{greetMes: 'welcome', funOne: ƒ, funTwo: ƒ}
 let fun = obj.funOne;
-fun();
-obj.funTwo();
-let a = obj.funTwo;
-a();
+fun(); //window
+obj.funTwo(); //window
+let a = obj.funTwo; 
+a(); //window

@@ -383,7 +383,6 @@ var petCounts = pets.reduce(function (obj, pet) {
 console.log(petCounts);
 
 
-
 let obj = {
   greetingMessage: "Welcome to Scaler Academy",
   funOne() {
@@ -400,3 +399,4 @@ fun();
 obj.funTwo();
 let a = obj.funTwo;
 a();
+
