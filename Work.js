@@ -403,6 +403,7 @@
 //================================================================
 
 let homeAddress = function (buildingName, street) {
+  console.log(`Building: ${buildingName}, Street: ${street}, Country: ${this.country}`)
   console.log("Building: " +  buildingName +  " street: " +  street +  " country: " +  this.country);
 };
 
@@ -414,21 +415,40 @@ let giorgiAddress = {
 let mariamAddress = {
   buildingName: "Red building",
   street: "Museum street",
-  country: "USA",
+  country: "GEORGIA",
 };
 
-// call is used to call functions
-//homeAddress("Empire building", "Main street");
-console.log("-----------------------------");
 
-homeAddress.call(giorgiAddress, "Empire building", "Main street");
+homeAddress.call(giorgiAddress, "Empire building", "Main street"); //Building: Empire building street: Main street country: USA
 
-console.log("-----------------------------");
-
-homeAddress.call(mariamAddress, "Empire building");
+homeAddress.call(mariamAddress, "Empire building"); //Building: Empire building street: undefined country: GEORGIA
 
 console.log("-----------------------------");
 
 
 
+let person = {
+  fName: "Mari",
+  lName: "Ost",
+  state: "CO"
+}
 
+let person2 = {
+  fName: "Gio",
+  lName: "Rgi",
+  state: "NY"
+}
+
+let fullName = function (city, country){
+  console.log(`${this.fName} ${this.lName} lives in ${city}, ${country} in ${this.state}`)
+}
+fullName.call(person2, "Brooklyn", "USA"); //Gio Rgi lives in Brooklyn, USA in NY
+fullName.call(person, "Brooklyn"); //Mari Ost lives in Brooklyn, undefined in CO
+// if we don't pass country argument here we'll get undefined
+
+
+// this როდესაც ვუწერთ მაშინ მოაქვს ობჯექტის ინფორმაცია
+// თუ პარამეტრებში გადავცემთ დამატებით რამეს მაშინ არგუმენტებშ უნდა სახელები (მაგ: პარამეტრებშ city არგუმენტად Denver) clg-ში this-ის გარეშე
+// თუ პარამეტრებში გვაქვს და არგუმენტში არ გადავცემთ რომელიმეს მოგვცემს undefined-ს
+
+fullName.apply(person, ["Brooklyn", "Georgia"]); 
