@@ -11,6 +11,7 @@ person.printName();
 // Arrow function gives undefined
 // normal function will give "Tom Hank"
 
+//==================================================================================
 
 //this.buildingName = "Palladium";
 
@@ -27,6 +28,7 @@ let address = function (buildingName, street) {
 
 address("Palladium", "Times Square");
 
+//==================================================================================
 
 let homeAddress = function (buildingName, street) {
   console.log(

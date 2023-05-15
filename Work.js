@@ -369,34 +369,66 @@
 // console.log(multiplyNumbers([2, 4, 2, 10]));
 
 //================================================================
-var pets = ["dog", "chicken", "cat", "dog", "chicken", "chicken", "rebbit"];
+// var pets = ["dog", "chicken", "cat", "dog", "chicken", "chicken", "rebbit"];
 
-var petCounts = pets.reduce(function (obj, pet) {
-  if (!obj[pet]) {
-    obj[pet] = 1;
-  } else {
-    obj[pet]++;
-  }
-  return obj;
-}, {});
+// var petCounts = pets.reduce(function (obj, pet) {
+//   if (!obj[pet]) {
+//     obj[pet] = 1;
+//   } else {
+//     obj[pet]++;
+//   }
+//   return obj;
+// }, {});
 
-console.log(petCounts);
+// console.log(petCounts);
 
 
-let obj = {
-  greetingMessage: "Welcome to Scaler Academy",
-  funOne() {
-    console.log(this);
-  },
-  funTwo: () => {
-    console.log(this);
-  },
+// let obj = {
+//   greetingMessage: "Welcome to Scaler Academy",
+//   funOne() {
+//     console.log(this);
+//   },
+//   funTwo: () => {
+//     console.log(this);
+//   },
+// };
+
+// obj.funOne();
+// let fun = obj.funOne;
+// fun();
+// obj.funTwo();
+// let a = obj.funTwo;
+// a();
+
+//================================================================
+
+let homeAddress = function (buildingName, street) {
+  console.log("Building: " +  buildingName +  " street: " +  street +  " country: " +  this.country);
 };
 
-obj.funOne();
-let fun = obj.funOne;
-fun();
-obj.funTwo();
-let a = obj.funTwo;
-a();
+let giorgiAddress = {
+  buildingName: "Empire building",
+  street: "Main street",
+  country: "USA",
+};
+let mariamAddress = {
+  buildingName: "Red building",
+  street: "Museum street",
+  country: "USA",
+};
+
+// call is used to call functions
+//homeAddress("Empire building", "Main street");
+console.log("-----------------------------");
+
+homeAddress.call(giorgiAddress, "Empire building", "Main street");
+
+console.log("-----------------------------");
+
+homeAddress.call(mariamAddress, "Empire building");
+
+console.log("-----------------------------");
+
+
+
 

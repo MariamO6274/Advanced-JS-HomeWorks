@@ -106,7 +106,7 @@ runBtn.addEventListener("click", () => {
 // that can then be used and changed inside the inner function.
 
 function init() {
-  var name = "Mozilla"; // name is a local variable created by init
+  var name = "Giorgi"; // name is a local variable created by init
   
   function displayName() {
     // displayName() is the inner function, that forms the closure
