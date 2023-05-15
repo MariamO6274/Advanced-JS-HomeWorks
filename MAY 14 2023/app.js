@@ -86,7 +86,14 @@ info1.apply(game, ["SEGA", "Sonic"]); //Spider Man was released in 2023, for SEG
 // call - we can write them out as normal
 // apply - they need to be inside of an array
 
+console.log("------------Bind------------");
+
+var gameInfo = info.bind(game, "SEGAA", "Sonic.");
+gameInfo();
+//Permanent change that will store in variable ამ შემთხვევაში var gameInfo და მერე ფუნქციასავით იძახებ.
+
 console.log("-----------------------");
+
 var myInfo = {
   myName: "Mariam",
   mylastName: "Ostatishvili",
@@ -122,9 +129,44 @@ fullName.call(person, "Brooklyn"); //Mari Ost lives in Brooklyn, undefined in CO
 fullName.apply(person, ["Brooklyn", "Georgia"]); 
 
 // this როდესაც ვუწერთ მაშინ მოაქვს ობჯექტის ინფორმაცია, თუ არ გადავცემთ this-ს ობჯექტში მოაქვს undefined
-// თუ პარამეტრებში გადავცემთ დამატებით რამეს მაშინ არგუმენტებშ უნდა სახელები (მაგ: პარამეტრებშ city არგუმენტად Denver) clg-ში this-ის გარეშეა
-// თუ პარამეტრებში გვაქვს და არგუმენტში არ გადავცემთ რომელიმეს მოგვცემს undefined-ს
+// თუ პარამეტრებში გადავცემთ დამატებით რამეს მაშინ არგუმენტებშ უნდა სახელები (მაგ: პარამეტრებშ city არგუმენტად "Denver") clg-ში this-ის გარეშეა
+// თუ პარამეტრებში გვაქვს (city) და არგუმენტში არ გადავცემთ რომელიმეს მოგვცემს undefined-ს
 
 // call and apply looks like prototypes
-console.log("-----------------------");
-console.log("------------Bind------------");
+// call and apply ONLY for ONE time uses
+
+console.log("------------TASK------------")
+
+/*
+* TASKS
+
+1. Creat am object called book and add a title and author property.
+Next creat an info function that logs "title was written by author" to the console.
+Use call() to log the sentence to the console.
+
+2. Update info to include the year or release, i.e. "..and was released in year".
+Use apply() to update the invocation
+
+3. Finally, use bind() and invoke the function with the new variable.
+
+*/
+
+var book = {
+  title: "Jungle Book",
+  author: "Rudyard Kipling"
+};
+
+var inffo = function(year){
+  console.log(
+    this.title + " was written by " + this.author + " and was released in " + year
+  );
+}
+
+inffo.call(book); //comment this out, or u/ll get undefined for year!
+// 1.Jungle Book was written by Rudyard Kipling
+inffo.apply(book, ["1967"]);
+// 2.Jungle Book was written by Rudyard Kipling and was released in 1967
+
+var jungleBookInfo = inffo.bind(book, "1967");
+jungleBookInfo();
+//Jungle Book was written by Rudyard Kipling and was released in 1967
