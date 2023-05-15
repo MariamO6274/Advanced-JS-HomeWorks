@@ -1,89 +1,3 @@
-// console.log("practice");
-
-// // var person = {
-// //     firstName: "Mariam",
-// //     lastName: "Ost",
-// //     getFullName: function (){
-// //         var fullName = `${this.firstName} ${this.lastName}`
-// //         return fullName;
-// //     }
-
-// // }
-
-// // var logName = function(lang1, lang2) {
-// //     console.log("Logged: "+ this.getFullName());
-// // }
-
-// // var logPersonName = logName.bind(person);
-// // logPersonName();
-
-// //=========================================================================
-
-// // const pers = {
-// //   firstName: "Mariamo",
-// //   lastName: "OStatish",
-// //   fullName: function () {
-// //     return this.firstName + " " + this.lastName;
-// //   },
-// // };
-
-// // const children = {
-// //   firstName: "Lazare",
-// //   lastName: "Nikolas",
-// // };
-
-// // let fullName = pers.fullName.bind(children);
-// // console.log(fullName);
-
-// console.log(
-//   "<---------------------------Home Work--------------------------->"
-// );
-
-// // Date : 4 May 2023
-// // call APply bind Practice steps
-// // 1. create some person obj with firstname, lastname and printDetails function
-// //          Remember to use 'this' in your function
-// // 2. Create another person obj, and try to borrow the function from person1
-// // 3. Use call and apply methods on person obj
-// // 4. Introduce at least 2 arguments to your printDetails function.
-// // 5. Pass these arguments through call, apply methods
-// // 6. Now use bind to create copies of function (with some context)
-
-// var printDetails = function (city, country) {
-//   console.log(
-//     `${this.firstname} ${this.lastName} lives in ${city}, ${country}`
-//   );
-// };
-
-// var person = {
-//   firstname: "Mari",
-//   lastName: "Ost",
-// };
-
-// var anotherPerson = {
-//   firstname: "Mariam",
-//   lastName: "Ostatishvili",
-// };
-
-// var person2 = {
-//   firstname: "Nino",
-//   lastName: "Ostatishvili",
-// };
-
-// printDetails.call(anotherPerson, "Tbilisi", "Georgia");
-// printDetails.call(person2, "Tbilisi", "Georgia");
-// printDetails.apply(anotherPerson, ["Colorado", "USA"]);
-// printDetails.apply(person, ["Gori", "Georgia"]);
-
-// // we can make var array and pass var name to the apply
-
-// var useBind = printDetails.bind(person2);
-// useBind("Brooklyn", "NY");
-
-// var useBind2 = printDetails.bind(anotherPerson, "London", "England");
-// useBind2();
-
-// //=========================================================================
 
 // //prototype
 
@@ -405,3 +319,83 @@
 console.log("-----------------------------");
 
 
+
+function car(make, model) {
+  this.make = make;
+  this.model = model;
+}
+
+car("Honda", "City");
+console.log(this);
+// This simple call to Car function, will be executed
+// After execution, we see that the this keyword inside the Car function is pointing to window/global object
+// SO the make and model variables will be created on global object.
+
+//===================
+// But what if we use new operator to call Car function?
+
+// new operator ALWAYS returns a object. It will create an object of the function (hence named as constructor)
+let car1 = new car("Toyota", "Camry");
+console.log("this: ", this);
+console.log("car1: ", car1);
+
+// Its same as creating the car1 obj as below
+// let car1 = {
+//     make: "Toyota",
+//     model: "Camry"
+// }
+
+let car2 = new car("Hyundai", "Creta");
+let car3 = new car("Merc", "Class S");
+
+// Now we want to have a function, which should common between Car objects, but should not be accessible to any other objects like animal etc.
+
+car.prototype.printCarDetails = function () {
+  console.log(" Make: " + this.make + " MOdel : " + this.model);
+};
+
+car1.printCarDetails();
+car2.printCarDetails();
+car3.printCarDetails();
+
+//=============================================================
+// car objects are able to access animalDetails function
+car1.printAnimalDetails1();
+// But animalObjects cannot access carDetails function
+// So this will throw error
+// animalObj1.printCarDetails(); //coment this outtttt 
+// WHY?
+
+
+var person1 = {
+  firstName: "Mari",
+  lastName: "Ostatishvili",
+  year: 1988,
+};
+
+var person2 = {
+  firstName: "Giga",
+  lastName: "Lelashvili",
+  year: 1989,
+};
+
+var person3 = {
+  firstName: "Lazare",
+  lastName: "Lelashvili",
+  year: 2018,
+};
+
+var person4 = {
+  firstName: "Nikolas",
+  lastName: "Lelashvili",
+  year: 2020,
+};
+
+Object.prototype.familyFullname = function () {
+  console.log("My family member is: " + this.firstName + " " + this.lastName);
+};
+
+person1.familyFullname();
+person2.familyFullname();
+person3.familyFullname();
+person4.familyFullname();
