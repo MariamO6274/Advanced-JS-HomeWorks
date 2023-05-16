@@ -50,3 +50,49 @@ person4.familyFullname();
 // every js obj can accese to Object.prototype when you write this way (Object.prototype)
 
 
+//use new key
+var student1 = {
+  firstName: "Giorgi",
+  month: "April",
+  
+};
+
+var student2 = {
+  firstName: "Lika",
+  month: "May",
+  
+};
+
+var student3 = {
+  firsName: "Mariam",
+  month: "June",
+
+};
+
+var student4 = {
+  firsName: "Levan",
+  month: "July",
+
+};
+
+console.log(student1);
+console.log(student2);
+console.log(student3);
+console.log(student4);
+
+Object.prototype.details = function() {
+  console.log("Print date for studing: ", this.month);
+};
+
+function Details(month) {
+  console.log("I am a new function");
+  this.month = month;
+}
+Details.prototype.printDetails = function () {
+  console.log("print it " + this.month);
+};
+
+let students = new Details("June");
+students.printDetails();
+
+

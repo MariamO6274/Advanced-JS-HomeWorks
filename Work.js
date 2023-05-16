@@ -360,12 +360,12 @@ car3.printCarDetails();
 
 //=============================================================
 // car objects are able to access animalDetails function
-car1.printAnimalDetails1();
+// car1.printAnimalDetails1(); //commented this out or get undefined !!
 // But animalObjects cannot access carDetails function
 // So this will throw error
 // animalObj1.printCarDetails(); //coment this outtttt 
 // WHY?
-
+//--> because it has car1. if it was Object.prototype then we can get eccses
 
 var person1 = {
   firstName: "Mari",
@@ -399,3 +399,49 @@ person1.familyFullname();
 person2.familyFullname();
 person3.familyFullname();
 person4.familyFullname();
+
+//==========check this one 
+
+var student1 = {
+  firstName: "Giorgi",
+  month: "April",
+};
+
+var student2 = {
+  firstName: "Lika",
+  month: "May",
+};
+
+var student3 = {
+  firsName: "Mariam",
+  month: "June",
+};
+
+var student4 = {
+  firsName: "Levan",
+  month: "July",
+};
+
+console.log(student1);
+console.log(student2);
+console.log(student3);
+console.log(student4);
+
+// Object.prototype.details = () => {
+//   console.log("studies in despani technology since ", this.month);
+// };
+
+//when we are calling student1.details()  in dev tool it gives me undefind,bc of this is not pointing to a student1? how to??
+
+function Details(month) {
+  console.log("I am a new function");
+  this.month = month;
+}
+Details.prototype.printDetails = function () {
+  console.log("print it " + this.month);
+};
+
+let students = new Details("June");
+students.printDetails();
+
+
