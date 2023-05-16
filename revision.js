@@ -39,6 +39,7 @@ let homeAddress = function (buildingName, street) {
       " country: " +
       this.country
   );
+  
 };
 
 let giorgiAddress = {
