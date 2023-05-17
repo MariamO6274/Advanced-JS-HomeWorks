@@ -53,7 +53,7 @@ focusExample.addEventListener(
   true
 );
 
-doubleClkExample.addEventListener("dblclick", function (e) {
+doubleClkExample.addEventListener("ondblclick", function () {
   console.log("I am a double click button");
 });
 
@@ -65,3 +65,4 @@ console.log(creatDiv);
 let creatPelement = document.createElement("p");
 creatDiv.appendChild(creatPelement);
 console.log(creatPelement);
+document.body.appendChild(creatDiv); //add to html body 
