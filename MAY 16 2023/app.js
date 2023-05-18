@@ -61,8 +61,11 @@ doubleClkExample.addEventListener("ondblclick", function () {
 let creatDiv = document.createElement("div");
 console.log(creatDiv);
 
+var text = "Hello Mariam"
+
 //Add P element to Div
 let creatPelement = document.createElement("p");
-creatDiv.appendChild(creatPelement);
+creatPelement.textContent = text;
+creatDiv.appendChild(creatPelement); //dynamic text
 console.log(creatPelement);
 document.body.appendChild(creatDiv); //add to html body 
