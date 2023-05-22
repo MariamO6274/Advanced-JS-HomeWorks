@@ -59,12 +59,21 @@ but it should be present in your prototype chain)
 // This will help with doubts, understanding and coding speed
 
 
-// 10 may
+// 10 May
 Revise map, filter reduce
 Revise html css basics
 Understand Promises. Practice, practice, practice. And come up with doubts.
 
-// 11 may
+// 11 May
 
 https://github.com/MariamO6274/Advanced-JS-HomeWorks
 go over and mark
+
+
+//19 May
+
+Prototypes
+call apply bind
+Promises
+Closures
+'this' keyword
