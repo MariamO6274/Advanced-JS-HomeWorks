@@ -1,4 +1,4 @@
-const imageArr = ["tester1.jpg", "tester3.jpg", "tester3.jpg"];
+const imageArr = ["tester1.jpg", "tester2.jpg", "tester3.jpg"];
 
 function getRandomPhoto() {
   //get a random index
