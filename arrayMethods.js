@@ -1,3 +1,11 @@
+/**
+ * Is it a method or a function?
+ * 
+Close! A method is a function with the difference that the method is called on something.
+For example .toUpperCase() is a method called on string.
+ */
+
+
 //map
 //filter
 //find
