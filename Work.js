@@ -446,3 +446,14 @@ students.printDetails();
 ////////////////////////////////////////////////////////////////
 
 
+console.log("Here We Go")
+
+var arr = ["Apple", "Banana", "Ornge"];
+for (let i=0; i <3; i++){
+setTimeout(()=>{
+  console.log(arr[i]);
+}, 2000);
+}
+console.log("somthing..")
+
+//driren runin it without compailer in your mind
