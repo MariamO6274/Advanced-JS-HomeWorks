@@ -29,9 +29,4 @@ var word = "hhhhiiyyyyyuuuuubbbb";
 
 // 4h2i5y5u4b
 
-var state = {
-  count: 2,
-  valueToAdd: 30,
-};
 
-state.count = 40;

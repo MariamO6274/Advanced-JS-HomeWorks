@@ -33,3 +33,5 @@ function debounce(getData) {
 // we do it before creation (last created timout) line 21
 
 //only one setTimeout evrytime when we call/ deleting old setTimout and then creating new one
+
+// check for ddos attack
