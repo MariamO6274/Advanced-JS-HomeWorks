@@ -156,3 +156,45 @@ console.log("practice");
 var arr3 = [];
 
 arr3.mymap();
+
+//=======================================================================================
+
+
+// CALL APPLY BIND
+
+// 'this'.
+// this key word can point to the global object in some cases,
+// and in other cases it can point to the object that contains the function,
+// if the function is a method attached to an object.
+
+let person = {
+    firstName: "Tom",
+    lastName: "Doe",
+    printfullName: function() {
+        let fullName = this.firstName + " " + this.lastName
+        return fullName;
+     
+    }
+}
+
+
+// I have this object with these two properties and this method.
+// The method uses the this keyword.
+// Since this is a method on an object an this function is executed
+// this key word will point to this whole object the person object.
+
+let printfullName = function (city, country) {
+  console.log(
+    "FirstName: " +
+      this.name +
+      " LastName: " +
+      this.lastname +
+      " Lives in: " +
+      city +
+      " ," +
+      country
+  );
+};
+
+
+//=======================================================================================

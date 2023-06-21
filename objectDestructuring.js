@@ -65,3 +65,10 @@ const { firstName, age , city = "no city"} = user; //city will be Denver
 console.log(firstName, age);
 
 console.log(city)
+
+
+
+
+
+////////////////////
+

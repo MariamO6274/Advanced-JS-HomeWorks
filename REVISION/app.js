@@ -60,7 +60,89 @@ a(b);
 // If we call a() and b() we'll get "I am a second function" and
 // then after 5 sec --> "I am a first function"
 
+
 //=======================================================================================
 
+//NEW PROMISE
 
-// CALLBACKS
+/**ჯავასკრიპტში ხშირად გვაქვს ასინქრონულობის საჭიროება,
+ * მაგალითად მონაცმეთა ბაზიდან ინფორმაციის მიღება და მისი შემდგომი დამუშავება,
+ * სწორედ მსგავსი ასინქრონული ტიპის ოპერაციებისთვის გამოიყენება ჯავასკრიპტში Promise-ები */
+
+let promise = new Promise((resolve, reject) => {
+  // კოდის შესრულების პროცედურა, რომელსაც სჭირდება გარკვეული დრო
+
+  resolve(`success`); // თუ კოდი შესრულდა წარმატებით
+  reject(`failure`); // თუ კოდი არ შესრულდა წარმატებით
+});
+
+promise
+  .then((value) => {
+    /* თუ კოდი შესრულდა წარმატებით value პარამეტრის მნიშვნელობა იქნება success */
+  })
+  .catch((error) => {
+    /* თუ კოდი არ შესრულდა წარმატებით error პარამეტრის მნიშვნელობა იქნება failure */
+  });
+
+//========
+//ასევე შეგვიძლია ერთდროულად მოვუსმინოთ რამდენიმე promise-ს
+
+let promise2 = new Promise((resolve, reject) => {
+  if (1 < 2) {
+    resolve("success");
+    return;
+  }
+  reject("error");
+});
+
+let promise3 = new Promise((resolve, reject) => {
+  if (1 < 2) {
+    resolve("success 2");
+    return;
+  }
+  reject("error");
+});
+
+Promise.all([promise2, promise3])
+  .then((res) => console.log(res)) // დაიბეჭდება [ 'success', 'success 2' ]
+  .catch((err) => console.log(err));
+
+
+
+
+//=======================================================================================
+
+// ASYNC AWAIT
+
+/**ასინქრონული ფუნქცია ჯავასკრიპტში აღიწერება async საკვანძო სიტყვის დახმარებით,
+ * ხოლო await საკვანძო სიტყვა აუცილებელია მოთავსებული იყოს ასინქრონული ფუნქციის ტანში */
+
+let data = new Promise((resolve, reject) => {
+  const users = [`Mariam`, `Giorgi`, `Niko`];
+  if (true) {
+    resolve(users);
+    return;
+  }
+  reject(`error`);
+});
+
+const printUsers = async () => {
+  try {
+    const result = await data;
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+printUsers();
+
+//=======================================================================================
+
+// PROTOTYPE
+
+// All objects In JavaScript, and that includes functions.
+// All objects have a prototype property. 
+// Objects can share all the same prototype.
+
+// How do we make use of prototype effeciently in our code
