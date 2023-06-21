@@ -63,7 +63,8 @@ console.log(firstName, age);
 
 console.log(city);
 
-//////////////////////////////////////////////////////////////
+//============================================================================
+
 // DESTRUCTURE
 
 
@@ -81,8 +82,8 @@ const tree = {
 const {
     value, 
     children: [
-        { value: v2, children: [{value: v3}]},
-    {value: v4, children: [{value: v5}]}
+        { value: v2, children: [{value: v3}]},      // when you have repeated "value" we will save it like -> value: v2
+        {value: v4, children: [{value: v5}]}        // same name property
 
 ]
 } = tree

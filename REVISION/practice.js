@@ -167,3 +167,18 @@ function greet1(sayhello){
 let sayHey = greet("Good morning")
 // sayHey("Mariamoo")
 console.log(sayHey("Mari"))
+
+//////////////
+
+let promise9 = new Promise((resolve, reject)=>{
+    if(10 > 30){
+
+        console.log("I am promise 9...")
+        resolve("success")
+        return
+    }
+    reject("Error")
+
+})
+
+promisee9.then((value) => console.log(value)).catch(error => console.log(error))
