@@ -174,9 +174,12 @@ cars.forEach((car) => {
 // // get all grades > 30
 // grades.filter(grade => grade > 30); // [35, 50]
 
+
+//================================================================
+// JUNE 21st 2023
 //================================================================
 
-// JUNE 21st 2023
+
 
 // Let's combine 2 arrays
 
@@ -226,3 +229,19 @@ console.log("We have combined here first and then set.." + newset)
 
 const resArray = [...newset]
 console.log(resArray + " go back to array")
+
+//================================================================
+
+// Map
+
+const personss = [
+  { firstname: "Malcom", lastname: "Reynolds" },
+  { firstname: "Kaylee", lastname: "Frye" },
+  { firstname: "Jayne", lastname: "Cobb" },
+];
+
+personss.map(getFullName);
+
+function getFullName(item) {
+  return [item.firstname, item.lastname].join(" ");
+}
