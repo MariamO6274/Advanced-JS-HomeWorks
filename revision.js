@@ -170,3 +170,59 @@ car1.printAnimalDetails1();
 // So this will throw error
 animalObj1.printCarDetails();
 // WHY?
+
+
+
+
+
+// if we want to create 1000 employees
+// below method is not optimal way to create
+let emp1 = {
+    name: "Giorgi",
+    id: "213",
+    salary: "jhasdj",
+    getEmployeeDetails: function() {
+        return (name + " "+ id+ " "+salary);
+    }
+}
+
+let emp2 = {
+    name: "Giorgi",
+    id: "213",
+    salary: "jhasdj",
+    getEmployeeDetails: function() {
+        return (name + " "+ id+ " "+salary);
+    }
+}
+let emp3 = {
+    name: "Giorgi",
+    id: "213",
+    salary: "jhasdj",
+    getEmployeeDetails: function() {
+        return (name + " "+ id+ " "+salary);
+    }
+}
+// 
+
+console.log(emp1);
+console.log(emp2);
+console.log(emp3);
+
+
+function employee (name, id, salary) {
+    this.name = name;
+    this.id = id;
+    this.salary = salary;
+}
+employee.prototype.getEmployeeDetails = function() {
+    console.log("Name :" + this.name +" " + "id :" + this.id);
+}
+
+
+let emp11 = new employee("Mariam", 8128, 827187);
+let emp12 = new employee("Giorgi", 828, 8187);
+console.log(emp11);
+console.log(emp12);
+
+console.log(emp11.getEmployeeDetails());
+console.log(emp12.getEmployeeDetails());
