@@ -457,3 +457,28 @@ setTimeout(()=>{
 console.log("somthing..")
 
 //driren runin it without compailer in your mind
+
+//sort
+var arr1 = [3, 78, 32, 1, 543, 2, 0]
+arr1.sort(compareFn)
+console.log(arr1)
+
+function compareFn(a, b){
+  if (a < b){
+    return -1;
+  }else{
+    return 1
+  }
+}
+arr = [ "a", "c", "t", "d", "b"]
+arr.sort()
+console.log(arr)
+
+// filter
+var arr2 = [3, 78, 32, 1, 543, 2, 0];
+var result = arr2.filter(el => {
+  return el < 32
+})
+console.log("Result " + result)
+
+//

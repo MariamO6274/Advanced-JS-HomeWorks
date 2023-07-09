@@ -226,3 +226,6 @@ console.log(emp12);
 
 console.log(emp11.getEmployeeDetails());
 console.log(emp12.getEmployeeDetails());
+
+
+//new key words
