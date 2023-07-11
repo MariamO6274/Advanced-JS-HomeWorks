@@ -46,6 +46,26 @@ console.log("C is: ", d); // 70
 //---------------------------------------------------------------------
 
 // 2. HOW DO WE CONCAT TWO ARRAYS?
+let arr1 = [ 'red', 'green', 'blue']
+let arr2 = ['black', 'white', 'yellow']
+
+let arr3 = arr1.concat(arr2);
+console.log(arr3)
+
+
+let num1 = [1, 2, 3]
+let num2 = [4, 5, 6]
+let num3 = [7, 8, 9]
+
+let num4 = num1.concat(num2, num3)
+console.log("Number's arry: ", num4)
+
+
+//The concat() method is used to merge two or more arrays.
+//This method does not change the existing arrays, but instead returns a new array
+
+
+//---------------------------------------------------------------------
 
 // 3. USING SPREAD OPERATOR
 let first = { x: 10, y: 20}
@@ -76,3 +96,18 @@ const {
 ]
 } = tree
 console.log(value, v2, v3, v4, v5);
+
+//---------------------------------------------------------------------
+
+/*
+ * setTimeout
+ * promies
+ * guess output?
+ * what are generator funtions?
+ * what are ES6-7 features? promises
+ * what is a latest ecma script?
+ * what will you choose, why particular frame work used? what are differences between
+ * what are rendering technics between this 3 (frameworks) 
+ *  (rendering-server-side rendering and clint server rendering?)
+ * disicion making?
+ */
