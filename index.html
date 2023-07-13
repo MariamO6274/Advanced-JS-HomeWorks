@@ -17,6 +17,37 @@
     <h3>INR Rate</h3>
     <p id="inrRate">Unknown</p>
 
+    <button id="event-tester">Event Button</button>
+
+    <br />
+    <br />
+    <div id="outermost">
+      Grandparent (available all)
+      <div id="inner">
+        Parent (belongs to himself and Grandperents)
+        <div id="innermost">Child (don't have acces to others)</div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <h3>Event delegation example</h3>
+    <div id="eventdelegationo">
+      <li>iPhone</li>
+      <li>Sumsung</li>
+      <li>Motorola</li>
+      <button>Btn 1</button>
+       <button>Btn 2</button>
+    </div>
+
+    <style>
+      div {
+        min-width: 90px;
+        min-height: 80px;
+        padding: 30px;
+        border: 1px solid;
+      }
+    </style>
+
     <!-- <script src="app.js" defer></script> -->
     <!-- <script src="IIFEs.js"></script> -->
     <!-- <script src="closures.js"></script> -->
@@ -37,7 +68,7 @@
     <!-- <script src="gabosTesk.js"></script> -->
     <!-- <script stc="revision2.js"></script> -->
     <!-- <script stc="interview.js"></script> -->
-    <script stc="interviewYouTube.js"></script>
-
+    <!-- <script stc="interviewYouTube.js"></script> -->
+    <script stc="eventHandling.js"></script>
   </body>
 </html>
