@@ -73,3 +73,50 @@ let mariamAddress = {
 homeAddress.call(giorgiAddress, "Empire building", "Main street");
 
 homeAddress.call(mariamAddress, "Empire building");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// last
+
+// function person(fn, ln) {
+//   this.fn = fn;
+//   this.ln = ln;
+//   this.getName = () => {
+//     console.log(this.fn + " " + this.ln);
+//   };
+// }
+
+// var fname = person("mari", "ostat");
+// fname.getName();
