@@ -43,6 +43,30 @@ console.log("C is: ", d); // 70
 // if console.log is insice the scope then it will be // B-40, A-20, B-50
 // !! LET is safer to use then VAR (u can be sure that outside b won't mess up inside b)
 
+
+// Global scope
+var aa = 0;
+let bb = 20;
+const cc = 30;
+
+{
+  // Block scope
+  console.log(aa);
+  console.log(bb);
+  console.log(cc);
+  var xx = 100;
+  let yy = 200;
+  const zz = 300;
+  {
+    // Block scope
+    bb = 500;
+    console.log(bb);
+  }
+}
+
+console.log(xx);
+//console.log(yy);
+//console.log(zz);
 //---------------------------------------------------------------------
 
 // 2. HOW DO WE CONCAT TWO ARRAYS?
