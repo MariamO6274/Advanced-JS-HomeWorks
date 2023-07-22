@@ -154,3 +154,59 @@ console.log(' ')
 let arrNum = [99, 32, 23, 43, 53, 100]
 arrNum.splice(2,3,"a", "b", "c")
 console.log(arrNum) //[ 99, 32, 'a', 'b', 'c', 100 ]
+console.log(' ')
+
+//============================================================================
+
+// 11. slice()
+// The slice() slice out a piece from an array, 
+// it creates a new array
+
+// array.slice(start, end); Syntax
+
+ let numbers1 = [1, 2, 3, 4, 5, 6];
+//let numbers1 = ["apple", "van", "year", "zebra", "man", "boy"]; //["van", "year", "zebra"];
+let num2 = numbers1.slice(1, 4);
+console.log(num2) // [ 2, 3, 4 ]
+console.log(' ')
+
+//============================================================================
+
+// 12. reverse()
+// The reverse() method reverses the order of the elements in an array
+
+// This method overwrites the original array.
+
+// array.reverse() Syntax
+let numbers2 = [1, 2, 3, 4, 5, 6];
+let string = ["A", "B", "C", "D"];
+
+numbers2.reverse();
+console.log(numbers2) // [ 6, 5, 4, 3, 2, 1 ]
+string.reverse()
+console.log(string) //[ 'D', 'C', 'B', 'A' ]
+console.log(' ')
+
+//============================================================================
+
+// 13. isArray()
+// The isArray() method returns true if an object is an array, otherwise false
+
+// Check if an object is an array
+
+// array.isArray(obj) Syntax
+
+let numbers3 = [1, 2, 3, 4, 5, 6];
+let string2 = "CodeBustler"
+
+console.log(Array.isArray(numbers3)) // true
+console.log(Array.isArray(string2)); // false
+console.log(' ')
+
+//============================================================================
+
+// 14. indexOf()
+// The indexOf() method returns the first index (position) of a specified value,
+//of a specified value, returns -1 if the value is not found, and it searches from left to right.
+
+// Negative sstart values counts from the last element (but still searches from left to right)
