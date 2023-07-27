@@ -53,3 +53,33 @@ console.log(myFriendsCar)
  * 
  * 
  */
+
+
+
+// Real example
+// კლასების ინჰერიტენსი --> ერთმანეთში ინფორმაციის გაცვლა, ნათესაობა ))
+
+class User {
+    constructor(firstName,lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
+
+// extends აქ ნიშნავს რომ Student კლასიი დაესესხება User-ს დუპლიკატ ინფოს
+class Student extends User{
+    constructor(firstName,lastName, grade){
+        // this.firstName; ამის დუბლიკაცია ავირიდეთ თავიდან და გამოვიყენეთ super
+        // this.lastName; გამოვიყენეთ მშობელი კონსტრუქტორი ანუ User-ი Super მეთოდის დახმარებით
+        super(firstName, lastName)
+        this.grade = grade;
+    }
+}
+
+const fullname = new User('Mariam', 'Ostatoshvili')
+const studentFullname = new Student("Mariam", "Ostatoshvili", 85);
+console.log(fullname);
+console.log(studentFullname);
+
+// User { firstName: 'Mariam', lastName: 'Ostatoshvili' }
+// Student { firstName: 'Mariam', lastName: 'Ostatoshvili', grade: 85 }
