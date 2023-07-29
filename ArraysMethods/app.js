@@ -210,3 +210,29 @@ console.log(' ')
 //of a specified value, returns -1 if the value is not found, and it searches from left to right.
 
 // Negative sstart values counts from the last element (but still searches from left to right)
+
+// array.indexOf(item, start) Syntax
+
+let elements = ['laptop', 'HeadSet', 'Mobile', 'Router'];
+console.log(elements.indexOf('Mobile', 0))  // 2
+console.log(elements.indexOf('Mobile', 3))  // -1
+console.log(' ')
+
+//============================================================================
+
+// 15. lastIndexOf()
+// The  lastIndexOf() method returns the last index (position) of a specified value,
+//returns -1 if the value is not found, starts at a specified index and 
+// and searches from right to left.
+
+// Negative start value counts from the last element
+//(but still searches from right to left).
+
+// array.lastIndexOf(item, start) Syntax
+
+let elements2 = ["laptop", "Mobile", "HeadSet", "Mobile", "Router"];
+console.log(elements2.indexOf('Mobile', 0))  // 1
+// indexOf() : left to right
+
+console.log(elements2.lastIndexOf("Mobile", 4));  // 3
+// lastIndexOf() : right to left
