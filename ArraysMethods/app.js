@@ -223,7 +223,7 @@ console.log(' ')
 // 15. lastIndexOf()
 // The  lastIndexOf() method returns the last index (position) of a specified value,
 //returns -1 if the value is not found, starts at a specified index and 
-// and searches from right to left.
+//and searches from right to left.
 
 // Negative start value counts from the last element
 //(but still searches from right to left).
@@ -236,3 +236,18 @@ console.log(elements2.indexOf('Mobile', 0))  // 1
 
 console.log(elements2.lastIndexOf("Mobile", 4));  // 3
 // lastIndexOf() : right to left
+console.log(' ')
+
+//============================================================================
+
+// 16. find()
+// The find() method returns the first element in the provided array
+//that satisfies the provided testing function.
+
+// If no values satisfy the testing function, undefined is returned.
+
+// find ((element) => {/*....*/}); Syntax (arrow function)
+
+const arrray = [5, 12, 8, 130, 44];
+const found = arrray.find((element) => element > 10);
+console.log(found); // 12
