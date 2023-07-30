@@ -251,3 +251,73 @@ console.log(' ')
 const arrray = [5, 12, 8, 130, 44];
 const found = arrray.find((element) => element > 10);
 console.log(found); // 12
+console.log(' ')
+
+//============================================================================
+
+// 17. findIndex()
+// The findIndex() method returns the index of the first element in an array that satisties
+//the provided testing function. If no elements satisfy the testing function, then -1 returned.
+
+// array.findIndex(function(currentValue, index, arr), thisValue)
+
+const arrray3 = [5, 12, 8, 130, 44];
+const isLargeNumber = (element) => element > 13;
+console.log(arrray3.findIndex(isLargeNumber)); // Expected output: 3 (indexe)
+//130 is large number
+console.log(' ')
+
+//============================================================================
+
+// 18. includes()
+// The includes() method returns true if an array contains a specified value. (case sensitive)
+
+// if the value is not found returns false
+
+// array.includes(element, start); Syntax
+
+const num3 = [1, 2, 2];
+console.log(num3.includes(2)); // Expected output: true
+
+const strr = ['cat', 'dog', 'bat'];
+console.log(strr.includes('cat')); // Expected output: true
+console.log(' ')
+
+//============================================================================
+
+// 19. entries()
+// The entries() method returns an Array iterator object with key/value pairs.
+// And this method does not change the original array.
+
+// array.entries(); Syntax
+
+const days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+const day = days.entries();
+
+for(let x of day){
+    console.log(x + '\n')
+}
+
+// 0, sun
+// 1, mon
+// 2, tue
+// 3, wed
+// 4, thu
+// 5, fri
+// 6, sat
+console.log(' ')
+
+//============================================================================
+
+// 20. every()
+// The every() method tests whether all elements in the array pass the test
+// implemented by the provided function. It returns a Boolean value
+
+// every((element) => {/*code */}); Arrow function Syntax
+
+const array4 = [1, 30, 39, 29, 10, 13];
+const isBelow_1 = (currentValue) => currentValue < 40;
+console.log(array4.every(isBelos_1)); // Expected output: true
+
+const isBelow_2 = (currentValue) => currentValue < 30; 
+console.log(array4.every(isBelos_2)); // Expected output: true

@@ -13,6 +13,7 @@ function square1(num) {
 const square2 = function (num) {
   return num * num;
 };
+console.log(square2(5)); // This is how we call
 
 // this function doesn't have name so we are assighniing it to variable
 /**
@@ -28,8 +29,8 @@ const square2 = function (num) {
 
 //---------------------------------------------------------------------------
 
-// Q3 - What are First Class Functions? - in a language where functions can be treated
-// like a variable there functions are called called
+//! Q3 - What are First Class Functions? - in a language where functions can be treated
+// like a variable there functions are called
 // first class functions, in this cases functions can
 // be passed into another functions, can be used,
 // manipulated and basicly what variable can do function can do
@@ -44,6 +45,8 @@ function displaySquare(fn) {
   console.log("Square is ", fn(5));
 }
 displaySquare(square);
+// This is how powerful functions can be in JS, that we can pass them inside of another function
+//just like a variable, and we can also manipulate and return them from that function.
 //---------------------------------------------------------------------------
 
 // Q4 - What is IIFE? - Immidatly Invoked Functions Exspressions instead of regular function call square3()
@@ -65,7 +68,9 @@ displaySquare(square);
     console.log(x); // 1 sercheing x in inner scope, when doesn't find it, will search in its parent's scope
   })(2);
 })(1);
-
+// This happands bc of clouser..--> the ability of a function to access variables and functions that are
+//lexically out of its scope are called clousers. Clousers are created whenevr a new function is created,
+//bc function has a reference to its outer scope.
 //---------------------------------------------------------------------------
 
 // Q6 - Function Scope
@@ -76,19 +81,27 @@ const num2 = 3;
 const name = "Chamakh";
 
 // This function is defined in the global scope
+
+//When we call this--> multiply() function, it's going to take num1 and num2 from 
+//the global scope, bc they are defined in global scope not inside of this--> (multiply()) function.
+//if there was a copy of these variables inside of the function, it would have taken that one.
 function multiply() {
   return num1 * num2;
 }
 
 console.log(multiply()); // 60
 
+// Another EX of FUNCTION SCOPE
 // A nested function example
+
+//Keep in mind that we also have these variables outside of scope as well
+//but these will shadow the global scope variables.
 function getScore() {
   const num1 = 2;
   const num2 = 3;
 
   function add() {
-    return `${name} scored ${num1 + num2}`; // took name from global scope, num1 & num2 from local store
+    return `${name} scored ${num1 + num2}`; // took name from global scope, num1 & num2 from local scope
   }
 
   return add();
@@ -107,15 +120,28 @@ for (let i = 0; i < 5; i++) {
 }
 
 // every time this for loop runs, it creates another block scope for this function, let prints 0 1 2 3 4
-// if we had var instead of let, var doesn't have lock scope, var will print 5 5 5 5 5
+// if we had var instead of let, var doesn't have block scope, var will print 5 5 5 5 5
+// !!!! check Maurs videos
 //---------------------------------------------------------------------------
 
 // Q8 - Function Hoisting
+
+// Functions are hoisted a bit differently then a normal variable does.
 function functionName() {
   console.log("Roadside Coder");
 }
 functionName(); // if we move this up before function declaration, it will still work
 
+/**
+ * functionName();
+ * 
+ * function functionName() {
+  console.log("Roadside Coder");
+}
+ */ // if we move call function it will still work
+
+//---------------------------
+ 
 // what happends in variable ?
 var x = 5;
 console.log(x) // if we move this before var x = 5, we'll get undefined bc of hoisting
