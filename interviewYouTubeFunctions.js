@@ -132,23 +132,26 @@ function functionName() {
 }
 functionName(); // if we move this up before function declaration, it will still work
 
-/**
+/*
  * functionName();
  * 
  * function functionName() {
-  console.log("Roadside Coder");
-}
+ *   console.log("Roadside Coder");
+ * }
+ * 
  */ // if we move call function it will still work
 
 //---------------------------
- 
+
 // what happends in variable ?
 var x = 5;
 console.log(x) // if we move this before var x = 5, we'll get undefined bc of hoisting
+// !!! Check execution creation phases, functions are copied to scope and variable is set to undefined
 //---------------------------------------------------------------------------
 
+
 // Q9 - Function Hoisting O/P Based Question ?
-var f = 21;
+var x = 21;
 
 var fun = function() {
     console.log(x) // undefined 
@@ -165,10 +168,96 @@ fun();
 
 // Q10 - Params vs Arguments
 
-function squaree (num){ // Params
+function squaree (num){ // Params --> receive Arguments in function
     console.log(num * num);
 }
-squaree("squaree", + 5); // Arguments
+squaree("squaree", + 5); // values that we pass inside of here are --> Arguments
+
+
+// EX
+function multipply(numb1, numb2){
+  console.log(numb1 * numb2);
+}
+var arrr = [5, 6] // when we need to pass array, will use spread operator
+// multipply(5, 6) instead will go multipply(...arrr)
+
+function multipply1(...nums) {    // Rest operator
+  console.log(nums[0] * nums[1]);
+}
+var arrr = [5, 6];
+multipply(...arrr);  // Spread operator
+
 //---------------------------------------------------------------------------
 
-// Q11 - Params vs Arguments
+// Q11 - Params vs Arguments - O/P Based Questions
+// What would be the output of this EX?
+
+const fn = (a, x, y, ...numbers) => {
+  // Rest parameter must be last one so it can take rest of the numbers (arguments)
+  console.log(x, y, numbers); // output: 6 3 [ 7, 8, 9 ]
+};
+fn(5, 6, 3, 7, 8, 9) // This will take 6 and 3 as x and y, and ...numbers will take remaing value
+
+//---------------------------------------------------------------------------
+
+// Q12 - What is a Callback Function? - It is a function passed into another function as an argument,
+//which is then invoked inside the outer function to complete some kind of routine or action.
+
+//function says that you can call me back whenever you like
+// Give an example
+// you can also use JS predefined functions such as: setTimeout, map,filter, reduce..
+
+/**
+ * document.addEventListiner("click", function(){
+  // it takes 2 things
+  // 1. "click"--> event, click event
+  // 2. function(params)--> callback function
+});
+ */
+
+
+// When we are passing a function inside of another function and this function is
+//manipulated inside of this one(eventlistiner).
+
+//---------------------------------------------------------------------------
+
+// Q13 - Arrow functions - introduced in ES6, in some ways they work differently
+
+// normal fn
+const add1 = function (firstNum, secNum){
+  return firstNum + secNum;
+}
+
+// Arrow fn
+const add2 = (frNum, seNum) => {
+  return frNum + seNum
+}
+// if this is only returning one line we can write it this way, looks much cleaner
+
+const add3 = (fNum, sNum) => fNum + sNum;
+
+console.log("This is a short way of Arrow function", add3(1,3))
+
+// ! Arrow function VS Normal function
+// 1. Syntax
+// 2. Implicit "return" keyword --> get rid of it
+// 3. Arguments
+// EX
+function func() {
+  console.log(arguments)
+}
+func(1, 3, 2);  // [Arguments] { '0': 1, '1': 3, '2': 2 }
+// we can not do this in arrow function it will give us an error
+// 4. "this" keyword // Arrow fn does not have its own "this"
+// EX
+let user = {
+  username: "Mariam",
+  rc1: () => {
+    console.log("This is an arrow fn " + this.username) // undefind bc it's pointing to global object
+  },
+  rc2() {
+    console.log("This is normal fn " + this.username) // Mariam bc it's pointing to User object
+  }
+}
+user.rc1()
+user.rc2()
