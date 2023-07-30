@@ -5,7 +5,7 @@
 // What is lexical scope? - Scope refers to the current context of your code.
 //it can be eather globally or locally defined.
 
-// Lecical scope - means that a variable defined outside a function
+// Lexical scope - means that a variable defined outside a function
 //can be accessible inside of anoather function defined after a variable declaration.
 //But opposite is not true.(variable difined inside function can not be accesible outside that function)
 
@@ -25,7 +25,7 @@ local(); // Mariam
 // global scope
 function subscribe() {
     var myName = "Marii";
-    // inner scope
+    // inner scope 2
     function displayName(){
         // inner scope
         console.log(myName)
@@ -74,3 +74,137 @@ myFunc();
 
 // when we returning we are saving result in variable myFunc, we also could just call
 // line-64 displayName(); and line-66 makeFunc(); also like this--> makeFunc()();
+
+
+console.log("---------------------");
+
+//==============================================================================
+
+// CLOUSERE SCOPE CHAIN
+
+/*  Every closure has three scopes:
+
+    1)  Local scope (Own scope)
+    2)  Enclosing scope (can be block, function, or module scope) outer function's scope
+    3)  Global scope
+*/
+
+var lastN = "Ostat";
+function both() {
+  var midN = "mar";
+  function displayBoth() {
+    console.log(midN, lastN);
+  }
+  return displayBoth;
+}
+both()();
+
+
+// What's the use of it? - Clousers make it possible for a function
+// to have private variables.
+
+
+
+//------------------------------------------------------
+
+/// myself
+// EX. 4
+var lastName = "Ostatishvili" // global variable // global scope
+function displayMyName(){ // outer function // outer function scope
+    var firstName = "Mariamo" // local variable
+    function fullName(age){ // inner function
+        console.log(firstName, lastName, age)  // // local scope
+    }
+     return fullName;
+     
+}
+displayMyName()(35); // we can alos pass somthing here
+//------------------------------------------------------
+
+// SCOPE CHANES
+// EX. 5
+
+// global scope
+const e = 10;
+function sum(a) {
+  return function (b) {
+    return function (c) {
+      // outer functions scope
+      return function (d) {
+        // local scope
+        return a + b + c + d + e;
+      };
+    };
+  };
+}
+
+console.log(sum(1)(2)(3)(4)); // 20
+
+
+// we have anonymus functions nested to each other
+// a = 1, b = 2, c = 3, d = 4, e = 10
+
+
+
+
+
+
+
+//------------------------------------------------------
+
+
+// var lastName = "Ostatishvili"
+// function fullName(){ // outer function
+//     var myName = "Mariam" // local variabke
+//     function displayMyName(){ // inner function here 
+//         console.log(myName, lastName)
+//     }
+//      displayMyName();
+// }
+// // const result = fullName();
+// // result();
+// fullName();
+
+
+
+// var lastName = "Ostat" // gloabl var
+// function fullName(){ // oter fn
+//     var myName = "Marmar" // local var
+//     function displayName(){ // inner fn
+//         console.log(myName, lastName);
+//     }
+//     return displayName;
+// }
+// //fullName()();
+// const result = fullName();
+// result()
+
+
+
+
+// CLOUSERS
+// FUNCTION RETURNS A FUNCTION AND INNER FUNCTION HAS ACCESS TO OUTER FUNCTIONS VARIABLE
+
+var student2 = "Jack"
+function students(){  // outer function
+    var student1 = "Tom" // local variable
+    function displayName(){  // inner function
+        console.log(student1 + " and " + student2);
+    }
+    return displayName;
+}
+//students()();
+const result = students();
+result();
+
+
+
+
+// CLOUSERE SCOPE CHAIN
+
+/*  Every closure has three scopes:
+
+    1)  Local scope (Own scope)
+    2)  Enclosing scope (can be block, function, or module scope) outer function's scope
+    3)  Global scope
+*/
