@@ -32,7 +32,7 @@ const Navbar = () => {
   let dark_theme = false;
 
   const handleButtonClick = () => {
-    dark_theme = !dark_theme; // flip false to true, and true to false
+    dark_theme = !dark_theme; // flips false to true, and true to false
   };
 };
 
@@ -48,7 +48,8 @@ console.log("Scope chains");
 
 //==============================
 
-// A closure has three scope chains. We call them scope chains because JavaScript starts looking for where to find a variable in this specific order:
+// A closure has three scope chains. We call them scope chains because JavaScript
+//starts looking for where to find a variable in this specific order:
 
 // 1. Variables in their own scope (variables defined between the curly braces of a function).
 // 2. Variables defined in the outer function's scope.
