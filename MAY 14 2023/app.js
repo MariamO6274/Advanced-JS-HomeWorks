@@ -38,7 +38,7 @@ person2.getFullName(); //First name is Mari Last name is Ost
 
 //==================================================================================
 
-// when we have regular function do not use -> this <- to clg patrameters
+// when we have regular function do not use -> this <- to clg patrameters (use it when fn is in obj)
 // also additional parameter gives you undefind
 
 let address = function (buildingName, street) {
