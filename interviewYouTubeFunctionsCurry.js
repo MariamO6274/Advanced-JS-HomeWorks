@@ -113,3 +113,4 @@ console.log("---------------------");
 
 // Quesestion 5 - Manipulating DOM
 // Real world scenario for using currying while developing our application
+// add more
