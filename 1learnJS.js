@@ -84,6 +84,40 @@ console.log(sumOddNumbers([15, 5, 10])); // 20
 console.log(sumOddNumbers([2, 3, 4, 5, 6])); // 8
 console.log(sumOddNumbers([-2, -3, 4, 5, 6])); // 2
 
+// FILTER
+// 8. Complete the function getPositiveTemperatures such that it returns an array containing the positive temperatures (the temperatures that are above 0).
+function getPositiveTemperatures(temperatures) {
+  return temperatures.filter((temp) => {
+    return temp >= 0;
+  });
+}
+// Sample usage - do not modify
+console.log(getPositiveTemperatures([-5, 12, 3])); // [12, 3]
+console.log(getPositiveTemperatures([1, -3, -2, 4, 10])); // [1, 4, 10]
+
+
+// 9. Complete the function getFreezingTemperatures such that it returns an array containing the freezing temperatures (the temperatures that are below 0).
+function getFreezingTemperatures(temperatures) {
+    return temperatures.filter(function(temperature){
+        return temperature < 0;
+    })
+
+}
+
+// Sample usage - do not modify
+console.log(getFreezingTemperatures([-5, 12, 3])); // [-5]
+console.log(getFreezingTemperatures([1, -3, -2, 4, 10])); // [-3, -2]
+
+
+
+
+
+
+
+
+
+
+
 //================================================================
 // This is how we call it in terminal
 // node 1learnJS.js
